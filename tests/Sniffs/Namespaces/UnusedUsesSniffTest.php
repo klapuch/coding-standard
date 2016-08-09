@@ -136,4 +136,12 @@ class UnusedUsesSniffTest extends \SlevomatCodingStandard\Sniffs\TestCase
 		$this->assertNoSniffErrorInFile($report);
 	}
 
+	public function testAnnotations()
+	{
+		$report = $this->checkFile(__DIR__ . '/data/unusedUses-annotations.php', [
+			'searchAnnotations' => true,
+		]);
+		$this->assertNoSniffErrorInFile($report);
+	}
+
 }
